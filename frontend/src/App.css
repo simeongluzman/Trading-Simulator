@@ -1,0 +1,25 @@
+.container {
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.data {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.loading {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #888;
+}
+
+.error {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #36dbf48b;
+}
