@@ -44,6 +44,10 @@ const CryptoData = () => {
 
   const [cryptoData, setCryptoData] = useState(initialData);
 
+  const formatToTwoDecimals = (num) => {
+    return parseFloat(num).toFixed(2);
+  };
+
   useEffect(() => {
     const socket = new WebSocket('ws://localhost:8000/ws/prices/');
 
@@ -68,12 +72,12 @@ const CryptoData = () => {
           ...prevData,
           [coin]: {
             ...prevData[coin],
-            askPrice: askPrice,
-            bidPrice: bidPrice,
-            volume: volume,
-            dailyChange: dailyChange,
-            low: low,
-            high: high
+            askPrice: formatToTwoDecimals(askPrice),
+            bidPrice: formatToTwoDecimals(bidPrice),
+            volume: formatToTwoDecimals(volume),
+            dailyChange: formatToTwoDecimals(dailyChange),
+            low: formatToTwoDecimals(low),
+            high: formatToTwoDecimals(high)
           },
         }));
       }
